@@ -8,7 +8,7 @@
 Summary:	Mah Jongg for four players
 Name:		ka6-%{kaname}
 Version:	25.04.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -23,6 +23,7 @@ BuildRequires:	gettext-tools
 BuildRequires:	ka6-libkdegames-devel >= %{kdeappsver}
 BuildRequires:	ka6-libkmahjongg-devel >= %{kdeappsver}
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
 BuildRequires:	kf6-kdoctools-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	ninja
@@ -37,6 +38,8 @@ Requires(post,postun):	desktop-file-utils
 Requires:	python3-twisted >= 16.6.0
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%global         debug_package   %{nil}
 
 %description
 Kajongg - the classical Mah Jongg for four players. If you are looking
@@ -91,5 +94,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kajongg/kajonggui.rc
 %{_datadir}/kajongg/voices
 %{_datadir}/metainfo/org.kde.kajongg.appdata.xml
-%{_bindir}/kajongg
-%{_bindir}/kajonggserver
+%attr(755,root,root) %{_bindir}/kajongg
+%attr(755,root,root) %{_bindir}/kajonggserver
