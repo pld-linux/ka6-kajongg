@@ -7,12 +7,12 @@
 %define		kaname		kajongg
 Summary:	Mah Jongg for four players
 Name:		ka6-%{kaname}
-Version:	25.12.0
-Release:	2
+Version:	25.12.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	e85d9d57ca008adf04b99dc52ad80072
+# Source0-md5:	6a44b841466f8626cdaec0cce8d07a8e
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -38,6 +38,7 @@ Requires(post,postun):	desktop-file-utils
 Requires:	python3-twisted >= 16.6.0
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildArch:	noarch
 
 %global         debug_package   %{nil}
 
