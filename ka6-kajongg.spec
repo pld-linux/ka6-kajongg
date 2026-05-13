@@ -6,6 +6,7 @@
 %define		qtver		6.8
 %define		kaname		kajongg
 Summary:	Mah Jongg for four players
+Summary(pl.UTF-8):	Mah Jongg dla 4 graczy
 Name:		ka6-%{kaname}
 Version:	26.04.1
 Release:	1
@@ -37,14 +38,18 @@ BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires:	python3-twisted >= 16.6.0
 Obsoletes:	ka5-%{kaname} < %{version}
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %global         debug_package   %{nil}
 
 %description
 Kajongg - the classical Mah Jongg for four players. If you are looking
 for the Mah Jongg solitaire please use the application KMahjongg.
+
+%description -l pl.UTF-8
+Kajongg - klasyczny Mah Jongg dla 4 graczy. Jeśli szukasz gry dla
+jednej osoby zainteresuj się aplikacją KMahjongg.
 
 %prep
 %setup -q -n %{kaname}-%{version}
