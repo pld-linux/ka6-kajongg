@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.2
+%define		kdeappsver	26.04.3
 %define		kframever	6.13.0
 %define		qtver		6.8
 %define		kaname		kajongg
 Summary:	Mah Jongg for four players
 Summary(pl.UTF-8):	Mah Jongg dla 4 graczy
 Name:		ka6-%{kaname}
-Version:	26.04.2
+Version:	26.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	74ab38a9ed29c0b4d94d57af253e38c2
+# Source0-md5:	4de80c80b8c1094f111966908274cc9e
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
